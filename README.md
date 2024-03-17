@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
+## Installing dependencies
+
+Run `npm install primeng` to install PrimeNG.
+
+Run `npm i primeflex` to install PrimeFlex.
+
+Run `npm install primeicons` to install PrimeIcons.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
