@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
 selector: 'toolbar-component',
@@ -7,20 +7,20 @@ templateUrl: './toolbar.component.html',
 styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  items: MenuItem[] | undefined;
-constructor() {
+
+constructor(private router:Router) {
+}
+
+loadHome(): void
+{
+  this.router.navigateByUrl('/main')
+}
+
+loadCatalog(): void
+{
+  this.router.navigateByUrl('/store/catalog')
 }
 
 ngOnInit() {
-  this.items = [
-      {
-          label: 'Update',
-          icon: 'pi pi-refresh'
-      },
-      {
-          label: 'Delete',
-          icon: 'pi pi-times'
-      }
-  ];
 }
 }

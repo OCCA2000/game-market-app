@@ -9,11 +9,13 @@ import { ToolbarModule } from './modules/toolbar/toolbar.module';
 // Componentes
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
