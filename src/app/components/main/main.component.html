@@ -1,2 +1,16 @@
-<toolbar-component></toolbar-component>
-
+<p-card header="{{title}}">
+  <!-- ONE-WAY DATA BINDING -> BACKEND TO FRONTEND -->
+  <p class="m-0">
+      {{welcome_message}}
+  </p>
+  <br>
+  <p-button label="Haz clic" (click)="onClick()"></p-button>
+  <br>
+  <img [src] = "image_path" style = "width: 20%;">
+  <br>
+  <!-- TWO-WAY DATA BINDING -> BACKEND TO FRONTEND AND VICEVERSA -->
+  <input pInputText [(ngModel)]="name" (input)="changeText()"/>
+  <br>
+  <!-- ONE-WAY DATA BINDING INVERSED -> FRONTEND TO BACKEND -->
+  <input pInputText (input)="setText($event)" placeholder="Ingrese un texto"/>
+</p-card>
