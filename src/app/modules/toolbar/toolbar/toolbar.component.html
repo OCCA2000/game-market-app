@@ -1,8 +1,16 @@
 <p-toolbar>
   <div class="p-toolbar-group-start">
-      <button pButton label="Catálogo" icon="pi pi-book" class="mr-2" (click)="loadCatalog()"></button>
+      <button pButton label="Catálogo"
+              icon="pi pi-book"
+              pTooltip="Ver los juegos disponibles."
+              class="mr-2"
+              (click)="loadCatalog()"></button>
   </div>
   <div class="p-toolbar-group-end">
-    <button pButton label="Inicio" icon="pi pi-home" class="mr-2" (click)="loadHome()"></button>
+    <button pButton label="Inicio"
+            icon="pi pi-home"
+            pTooltip="Ir a la página de inicio."
+            class="mr-2"
+            (click)="loadHome()"></button>
   </div>
 </p-toolbar>

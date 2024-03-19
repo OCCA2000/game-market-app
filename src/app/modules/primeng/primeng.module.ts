@@ -8,7 +8,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { PanelModule } from 'primeng/panel';
 import { CardModule } from 'primeng/card';
-import { FormsModule } from '@angular/forms';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
     declarations: [],
@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
       InputTextModule,
       PanelModule,
       CardModule,
-      FormsModule],
+      TooltipModule],
     exports: [
       ToolbarModule,
       ButtonModule,
@@ -29,7 +29,7 @@ import { FormsModule } from '@angular/forms';
       InputTextModule,
       PanelModule,
       CardModule,
-      FormsModule],
+      TooltipModule],
     providers: []
 })
 export class PrimengModule { }

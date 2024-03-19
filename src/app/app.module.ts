@@ -2,6 +2,7 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PrimengModule } from './modules/primeng/primeng.module';
 import { ToolbarModule } from './modules/toolbar/toolbar.module';
@@ -10,6 +11,7 @@ import { ToolbarModule } from './modules/toolbar/toolbar.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { TestServiceService } from './services/admin/test-service.service';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     PrimengModule,
     ToolbarModule
   ],
-  providers: [],
+  providers: [TestServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

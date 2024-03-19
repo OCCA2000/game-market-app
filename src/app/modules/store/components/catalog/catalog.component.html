@@ -1,1 +1,10 @@
 <h1> Catálogo de juegos </h1>
+
+<p-card *ngFor="let game of games" [header]="game.name">
+  <ul>
+    <li>{{game.year}}</li>
+    <li>{{game.developer}}</li>
+    <li>{{game.price}}</li>
+    <li>{{game.description}}</li>
+  </ul>
+</p-card>
