@@ -32,7 +32,7 @@ export class TestServiceService {
     // CREATE OBSERVABLE FROM SUBJECT
     public games$ = this.game_subject.asObservable();
 
-    // SEND DATA METHOD
+    // SEND DATA PRIVATE METHOD
     private sendGames(games: Game[]): void
     {
       this.game_subject.next(games);
