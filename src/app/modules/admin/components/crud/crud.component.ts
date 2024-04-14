@@ -14,7 +14,8 @@ export class CrudComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.getGamesFile();
+//    this.getGamesFile();
+    this.getGamesRest();
   }
 
   getGamesFile(): void
@@ -23,5 +24,18 @@ export class CrudComponent implements OnInit {
       console.log("Datos del archivo", data);
       this.games_catalog = data;
     })
+  }
+
+  getGamesRest():void
+  {
+    this.admin_service.getGamesHttp().subscribe(
+      (data)=>{
+        console.log("Datos obtenidos desde HTTP.", data);
+        this.games_catalog=data;
+      },
+      (error)=>{
+        console.error("Error al cargar los datos.", error)
+      }
+    );
   }
 }

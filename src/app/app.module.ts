@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PrimengModule } from './modules/primeng/primeng.module';
 import { ToolbarModule } from './modules/toolbar/toolbar.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { TestServiceService } from './services/admin/test-service.service';
     AppRoutingModule,
     FormsModule,
     PrimengModule,
-    ToolbarModule
+    ToolbarModule,
+    HttpClientModule
   ],
   providers: [TestServiceService],
   bootstrap: [AppComponent]
