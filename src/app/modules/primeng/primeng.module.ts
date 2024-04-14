@@ -9,6 +9,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PanelModule } from 'primeng/panel';
 import { CardModule } from 'primeng/card';
 import { TooltipModule } from 'primeng/tooltip';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
     declarations: [],
@@ -20,7 +21,8 @@ import { TooltipModule } from 'primeng/tooltip';
       InputTextModule,
       PanelModule,
       CardModule,
-      TooltipModule],
+      TooltipModule,
+      TableModule],
     exports: [
       ToolbarModule,
       ButtonModule,
@@ -29,7 +31,8 @@ import { TooltipModule } from 'primeng/tooltip';
       InputTextModule,
       PanelModule,
       CardModule,
-      TooltipModule],
+      TooltipModule,
+      TableModule],
     providers: []
 })
 export class PrimengModule { }

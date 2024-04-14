@@ -4,16 +4,21 @@ import { MainComponent } from './components/main/main.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TestServiceService } from './services/admin/test-service.service';
 import { StoreService } from './services/store/store.service';
+import { AdminService } from './services/admin/admin.service';
 
 const routes: Routes = [
   {
     path: 'main',
     component: MainComponent
   },
+  // LAZY LOADING
   {
-    // LAZY LOADING
     path: 'store',
     loadChildren: () => import('./modules/store/store.module').then(m => m.StoreModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
   },
   {
     path: 'page-not-found',

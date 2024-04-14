@@ -13,7 +13,8 @@ export class TestServiceService {
         developer: "Rockstar Games",
         year: 2013,
         price: 60,
-        type: ["Digital", "Físico"]
+        type: ["Digital", "Físico"],
+        "platforms": ["PC", "PlayStation", "Xbox"]
       },
       {
         id: 2,
@@ -22,7 +23,8 @@ export class TestServiceService {
         developer: "Microsoft",
         year: 2010,
         price: 20,
-        type: ["Digital"]
+        type: ["Digital"],
+        "platforms": ["PC", "PlayStation", "Xbox"]
       }
     ]
 

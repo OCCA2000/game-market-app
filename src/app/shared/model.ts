@@ -7,4 +7,5 @@ export interface Game
   year: number;
   price: number;
   type: string[];
+  platforms: string[];
 }

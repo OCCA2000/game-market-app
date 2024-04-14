@@ -1,0 +1,23 @@
+<h1> Juegos</h1>
+<p-table [value]="games_catalog" [tableStyle]="{'min-width':'50rem'}">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Desarrollador</th>
+      <th>Año</th>
+      <th>Precio</th>
+      <th>Plataformas</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-game>
+    <tr>
+      <td>{{game.id}}</td>
+      <td>{{game.name}}</td>
+      <td>{{game.developer}}</td>
+      <td>{{game.year}}</td>
+      <td>{{game.price}}</td>
+      <td>{{game.platforms}}</td>
+    </tr>
+  </ng-template>
+</p-table>
