@@ -1,10 +1,16 @@
 <h1> Catálogo de juegos </h1>
 
-<p-card *ngFor="let game of games" [header]="game.name">
+<p-card *ngFor="let game of games" [header]="game.name" [style] = " {width:'360px'}">
+  <ng-template pTemplate="header">
+    <img src="assets/game_icon.jpg"/>
+  </ng-template>
   <ul>
     <li>{{game.year}}</li>
     <li>{{game.developer}}</li>
     <li>{{game.price}}</li>
     <li>{{game.description}}</li>
   </ul>
+  <ng-template pTemplate="footer">
+    <p-button label="Ver detalle" icon="pi pi-list" [routerLink]="'/store/game/'+game.id"></p-button>
+  </ng-template>
 </p-card>

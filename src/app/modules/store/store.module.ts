@@ -6,12 +6,14 @@ import { StoreRoutingModule } from './store-routing.module';
 import { StoreComponent } from './store.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { CartComponent } from './components/cart/cart.component';
+import { GameComponent } from './components/game/game.component';
 
 @NgModule({
   declarations: [
     StoreComponent,
     CatalogComponent,
-    CartComponent
+    CartComponent,
+    GameComponent
   ],
   imports: [
     CommonModule,
