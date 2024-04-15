@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Game } from '../../../../shared/model';
-import { TestServiceService } from '../../../../services/admin/test-service.service';
+import { StoreService } from '../../../../services/store/store.service';
 
 @Component({
 selector: 'catalog-component',
@@ -9,23 +9,22 @@ styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
 
-  public games: Game[]=[];
+  public games: Game[] | undefined;
 
-constructor(private observable_service: TestServiceService, private change_detector_ref: ChangeDetectorRef)
-{
+  constructor(private observable_service: StoreService, private change_detector_ref: ChangeDetectorRef)
+  {
 
-}
+  }
 
-ngAfterViewInit(): void
-{
-  this.observable_service.games$.subscribe((data)=>{
-    this.games = data;
+  ngAfterViewInit(): void
+  {
+    this.observable_service.getGames().subscribe((data)=>{
+      this.games = data;
+      this.change_detector_ref.detectChanges();
+    })
+  }
+
+  ngOnInit(){
     this.change_detector_ref.detectChanges();
-  })
-}
-
-ngOnInit(){
-  this.observable_service.getGamesRest();
-  this.change_detector_ref.detectChanges();
-}
+  }
 }

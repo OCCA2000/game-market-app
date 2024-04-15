@@ -49,4 +49,9 @@ export class StoreService {
       map(data=> data.find(item=>item.id==id))
     );
   }
+
+  public getGames():Observable<Game[] | undefined>
+  {
+    return this.http.get<Game[]>(this.uri);
+  }
 }
