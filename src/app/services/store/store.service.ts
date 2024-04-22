@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Game } from '../../shared/model';
 import { Observable, Subject, catchError, filter, map, of, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { StoreServiceInterface } from './store.service.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class StoreService {
+export class StoreService implements StoreServiceInterface {
 
   private uri = 'assets/data.json';
 
@@ -43,7 +44,7 @@ export class StoreService {
     map((num:number)=>num*2)
   );
 
-  public getGameById(id:number):Observable<Game | undefined>
+  public getGame(id:number):Observable<Game | undefined>
   {
     return this.http.get<Game[]>(this.uri).pipe(
       map(data=> data.find(item=>item.id==id))

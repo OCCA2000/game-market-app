@@ -20,7 +20,7 @@ export class GameComponent implements OnInit {
     console.log(this.activated_route.snapshot.params);
     console.log(this.id);
 
-    this.store_service.getGameById(this.id).subscribe((data)=>{
+    this.store_service.getGame(this.id).subscribe((data)=>{
       console.log(data);
       this.game=data;
     },
