@@ -10,6 +10,8 @@ import { PanelModule } from 'primeng/panel';
 import { CardModule } from 'primeng/card';
 import { TooltipModule } from 'primeng/tooltip';
 import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
     declarations: [],
@@ -22,7 +24,9 @@ import { TableModule } from 'primeng/table';
       PanelModule,
       CardModule,
       TooltipModule,
-      TableModule],
+      TableModule,
+      PaginatorModule,
+      ToastModule],
     exports: [
       ToolbarModule,
       ButtonModule,
@@ -32,7 +36,9 @@ import { TableModule } from 'primeng/table';
       PanelModule,
       CardModule,
       TooltipModule,
-      TableModule],
+      TableModule,
+      PaginatorModule,
+      ToastModule],
     providers: []
 })
 export class PrimengModule { }

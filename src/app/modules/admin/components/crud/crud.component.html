@@ -1,5 +1,13 @@
+<p-toast></p-toast>
 <h1> Juegos</h1>
-<p-table [value]="games_catalog" [tableStyle]="{'min-width':'50rem'}">
+<p-table
+  [value]="games_catalog"
+  [tableStyle]="{'min-width':'50rem'}"
+  [paginator]="true"
+  [rows]="10"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} juegos"
+  [rowsPerPageOptions]="[5, 10, 15]">
   <ng-template pTemplate="header">
     <tr>
       <th>ID</th>
@@ -8,16 +16,35 @@
       <th>Año</th>
       <th>Precio</th>
       <th>Plataformas</th>
+      <th>Acción</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-game>
     <tr>
       <td>{{game.id}}</td>
       <td>{{game.name}}</td>
-      <td>{{game.developer}}</td>
+      <td>{{game.developer | uppercase}}</td>
       <td>{{game.year}}</td>
-      <td>{{game.price}}</td>
+      <td>{{game.price | currency}}</td>
       <td>{{game.platforms}}</td>
+      <td>
+        <p-button
+          icon="pi pi-pencil"
+          [rounded]="true"
+          severity="warning"
+          pTooltip="Modificar"
+          tooltipPosition="bottom"
+          (onClick)="updateGame(game)">
+        </p-button>
+        <p-button
+          icon="pi pi-trash"
+          [rounded]="true"
+          severity="danger"
+          pTooltip="Eliminar"
+          tooltipPosition="bottom"
+          (onClick)="deleteGame(game)">
+        </p-button>
+      </td>
     </tr>
   </ng-template>
 </p-table>

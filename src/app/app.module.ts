@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PrimengModule } from './modules/primeng/primeng.module';
 import { ToolbarModule } from './modules/toolbar/toolbar.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ import { TestServiceService } from './services/admin/test-service.service';
     FormsModule,
     PrimengModule,
     ToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [TestServiceService],
   bootstrap: [AppComponent]
