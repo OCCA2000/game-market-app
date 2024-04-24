@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { TestServiceService } from './services/admin/test-service.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { TestServiceService } from './services/admin/test-service.service';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [TestServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

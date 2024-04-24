@@ -1,5 +1,11 @@
 <p-toast></p-toast>
 <h1> Juegos</h1>
+<p-toolbar styleClass="mb-4 gap-2">
+  <ng-template pTemplate="left"></ng-template>
+  <ng-template pTemplate="right">
+      <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success mr-2" (click)="createGame()"></button>
+  </ng-template>
+</p-toolbar>
 <p-table
   [value]="games_catalog"
   [tableStyle]="{'min-width':'50rem'}"

@@ -18,10 +18,15 @@ export class CatalogComponent implements OnInit {
 
   ngAfterViewInit(): void
   {
-    this.observable_service.getGames().subscribe((data)=>{
+    this.observable_service.getGames().subscribe(
+    (data)=>{
       this.games = data;
       this.change_detector_ref.detectChanges();
-    })
+    },
+    (error)=>{
+      console.error('Error al obtener los juegos mediante HTTP: ', error)
+    }
+  )
   }
 
   ngOnInit(){

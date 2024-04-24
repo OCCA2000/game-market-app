@@ -7,7 +7,6 @@ import { StoreComponent } from './store.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { CartComponent } from './components/cart/cart.component';
 import { GameComponent } from './components/game/game.component';
-import { StoreService } from '../../services/store/store.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +19,6 @@ import { StoreService } from '../../services/store/store.service';
     CommonModule,
     StoreRoutingModule,
     PrimengModule
-  ],
-  providers: [
-    StoreService
   ]
 })
 export class StoreModule { }

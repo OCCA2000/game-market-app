@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { TestServiceService } from './services/admin/test-service.service';
-import { StoreService } from './services/store/store.service';
-import { AdminService } from './services/admin/admin.service';
-import { AlternativeStoreService } from './services/store/alternative-store.service';
 
 const routes: Routes = [
   {

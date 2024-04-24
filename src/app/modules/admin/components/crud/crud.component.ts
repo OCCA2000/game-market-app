@@ -21,14 +21,6 @@ export class CrudComponent implements OnInit {
     this.getGamesRest();
   }
 
-  getGamesFile(): void
-  {
-    this.admin_service.getGamesFile().subscribe((data)=>{
-      console.log("Datos del archivo", data);
-      this.games_catalog = data;
-    })
-  }
-
   getGamesRest():void
   {
     this.admin_service.getGamesHttp().subscribe(
@@ -50,22 +42,20 @@ export class CrudComponent implements OnInit {
       detail: 'El registro se ha modificado exitosamente',
       id: 1
     })
-    this.message_service.add({
-      severity: 'error',
-      summary: 'Modificación',
-      detail: 'El registro no fue modificado',
-      id: 2
-    })
-    this.message_service.add({
-      severity: 'warn',
-      summary: 'Modificación',
-      detail: 'El registro se modificó con alertas',
-      id: 3
-    })
   }
 
   deleteGame(game:Game)
   {
     throw new Error('Method not implemented.');
+  }
+
+  createGame()
+  {
+    this.message_service.add({
+      severity: 'success',
+      summary: 'Creación',
+      detail: 'El registro se ha creado exitosamente',
+      id: 1
+    })
   }
 }
