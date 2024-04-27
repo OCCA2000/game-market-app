@@ -7,13 +7,15 @@ import { StoreComponent } from './store.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { CartComponent } from './components/cart/cart.component';
 import { GameComponent } from './components/game/game.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
     StoreComponent,
     CatalogComponent,
     CartComponent,
-    GameComponent
+    GameComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,18 @@
+<p-card [header]="game?.name" [style]="{width:'360px' }">
+  <ng-template pTemplate="header">
+    <img alt="Card" src="assets/game_icon.jpg" />
+  </ng-template>
+  <ul>
+    <li>Año de fabricación: {{game?.year}}</li>
+    <li>Fabricante: {{game?.developer}}</li>
+    <li>Precio: {{game?.price | currency}}</li>
+    <li>Descripción: {{game?.description}}</li>
+  </ul>
+  <!--<ng-template pTemplate="footer">
+    <p-button
+      label="Ver catálogo"
+      icon="pi pi-list"
+      routerLink="/store/catalog"
+    ></p-button>
+  </ng-template>-->
+</p-card>

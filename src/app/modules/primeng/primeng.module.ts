@@ -12,6 +12,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
     declarations: [],
@@ -26,7 +27,8 @@ import { ToastModule } from 'primeng/toast';
       TooltipModule,
       TableModule,
       PaginatorModule,
-      ToastModule],
+      ToastModule,
+      DialogModule],
     exports: [
       ToolbarModule,
       ButtonModule,
@@ -38,7 +40,8 @@ import { ToastModule } from 'primeng/toast';
       TooltipModule,
       TableModule,
       PaginatorModule,
-      ToastModule],
+      ToastModule,
+      DialogModule],
     providers: []
 })
 export class PrimengModule { }

@@ -11,6 +11,14 @@
     <li>{{game.description}}</li>
   </ul>
   <ng-template pTemplate="footer">
-    <p-button label="Ver detalle" icon="pi pi-list" [routerLink]="'/store/game/'+game.id"></p-button>
+    <!--<p-button label="Ver detalle" icon="pi pi-list" [routerLink]="'/store/game/'+game.id"></p-button>-->
+    <p-button label="Ver detalle" (onClick)="showDetail(game)"></p-button>
   </ng-template>
 </p-card>
+
+<p-dialog
+  [(visible)]="show_detail"
+  header="Detalle del juego"
+  [contentStyle]="{'overflow': 'visible'}">
+  <detail-component [game]="selected_game"></detail-component>
+</p-dialog>

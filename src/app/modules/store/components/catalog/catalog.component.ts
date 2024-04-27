@@ -10,10 +10,17 @@ styleUrls: ['./catalog.component.scss']
 export class CatalogComponent implements OnInit {
 
   public games: Game[] | undefined;
+  public selected_game!: Game;
+  public show_detail=false;
 
   constructor(private observable_service: StoreService, private change_detector_ref: ChangeDetectorRef)
   {
 
+  }
+
+  showDetail(game: Game){
+    this.selected_game=game;
+    this.show_detail=true;
   }
 
   ngAfterViewInit(): void
