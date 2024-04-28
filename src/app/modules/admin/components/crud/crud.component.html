@@ -72,9 +72,13 @@
               type="text"
               class="inputfield w-full"
               formControlName="name"
+              required
               autofocus
             />
             <label for="name">* Nombre del juego</label>
+            <small *ngIf="game_form.get('name')!.hasError('required')" class="p-error">
+              El nombre es obligatorio.
+            </small>
           </span>
         </div>
         <div class="field col-12 md:col-6 mt-2">
@@ -88,6 +92,9 @@
               autofocus
             />
             <label for="developer">Fabricante</label>
+            <small class="p-error">
+              {{ admin_service.getErrors(game_form.controls['developer'], 'Fabricante') }}
+            </small>
           </span>
         </div>
         <div class="field col-12 md:col-3 mt-2">
@@ -101,6 +108,9 @@
               autofocus
             />
             <label for="year">* Año</label>
+            <small class="p-error">
+              {{ admin_service.getErrors(game_form.controls['year'], 'Año') }}
+            </small>
           </span>
         </div>
         <div class="field col-12 md:col-3 mt-2">
@@ -114,9 +124,15 @@
               autofocus
             />
             <label for="price">* Precio</label>
+            <small class="p-error">
+              {{ admin_service.getErrors(game_form.controls['price'], 'Precio') }}
+            </small>
           </span>
         </div>
         <div class="field col-12 md:col-6 mt-2">
+          <small class="p-error">
+            {{ admin_service.getErrors(game_form.controls['type'], 'Tipo') }}
+          </small>
           <p-fieldset legend="* Tipo">
             <div *ngFor="let type of types_catalog" class="field-checkbox">
               <p-checkbox
@@ -130,6 +146,9 @@
           </p-fieldset>
         </div>
         <div class="field col-12 md:col-6 mt-2">
+          <small class="p-error">
+            {{ admin_service.getErrors(game_form.controls['platform'], 'Plataforma') }}
+          </small>
           <p-fieldset legend="* Plataformas">
             <div *ngFor="let platform of platforms_catalog" class="field-checkbox">
               <p-checkbox

@@ -22,7 +22,7 @@ export class CrudComponent implements OnInit {
   selected_platforms: string[] = [];
   selected_types: string[] = [];
 
-  constructor(private admin_service: AdminService, private message_service: MessageService) {
+  constructor(public admin_service: AdminService, private message_service: MessageService) {
   }
 
   ngOnInit(){
@@ -37,7 +37,7 @@ export class CrudComponent implements OnInit {
     name: new FormControl('', [Validators.required]),
     description: new FormControl(''),
     developer: new FormControl(''),
-    year: new FormControl(0, [Validators.required]),
+    year: new FormControl(0, [Validators.required, Validators.min(1960), Validators.max(2024)]),
     price: new FormControl(0, [Validators.required]),
     type: new FormControl([], [Validators.required]),
     platform: new FormControl([], [Validators.required]),
