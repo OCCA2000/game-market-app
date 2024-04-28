@@ -54,3 +54,117 @@
     </tr>
   </ng-template>
 </p-table>
+
+<p-dialog
+  [(visible)]="game_dialog"
+  [style]="{width: '750px'}"
+  header="Datos del juego (* obligatorio)"
+  [modal]="true">
+  <ng-template pTemplate="content">
+    <form [formGroup]="game_form">
+      <br/>
+      <div class="formgrid grid">
+        <div class="field col-12 mt-2">
+          <span class="p-float-label">
+            <input
+              pInputText
+              id="name"
+              type="text"
+              class="inputfield w-full"
+              formControlName="name"
+              autofocus
+            />
+            <label for="name">* Nombre del juego</label>
+          </span>
+        </div>
+        <div class="field col-12 md:col-6 mt-2">
+          <span class="p-float-label">
+            <input
+              pInputText
+              id="developer"
+              type="text"
+              class="inputfield w-full"
+              formControlName="developer"
+              autofocus
+            />
+            <label for="developer">Fabricante</label>
+          </span>
+        </div>
+        <div class="field col-12 md:col-3 mt-2">
+          <span class="p-float-label">
+            <input
+              pInputText
+              id="year"
+              type="text"
+              class="inputfield w-full"
+              formControlName="year"
+              autofocus
+            />
+            <label for="year">* Año</label>
+          </span>
+        </div>
+        <div class="field col-12 md:col-3 mt-2">
+          <span class="p-float-label">
+            <input
+              pInputText
+              id="price"
+              type="text"
+              class="inputfield w-full"
+              formControlName="price"
+              autofocus
+            />
+            <label for="price">* Precio</label>
+          </span>
+        </div>
+        <div class="field col-12 md:col-6 mt-2">
+          <p-fieldset legend="* Tipo">
+            <div *ngFor="let type of types_catalog" class="field-checkbox">
+              <p-checkbox
+                name="group"
+                [value]="type"
+                formControlName="type"
+                [(ngModel)]="selected_types">
+              </p-checkbox>
+              <label [for]="type">{{ type }}</label>
+            </div>
+          </p-fieldset>
+        </div>
+        <div class="field col-12 md:col-6 mt-2">
+          <p-fieldset legend="* Plataformas">
+            <div *ngFor="let platform of platforms_catalog" class="field-checkbox">
+              <p-checkbox
+                name="group"
+                [value]="platform"
+                formControlName="platform"
+                [(ngModel)]="selected_platforms">
+              </p-checkbox>
+              <label [for]="platform">{{ platform }}</label>
+            </div>
+          </p-fieldset>
+        </div>
+        <div class="field col-12 mt-2">
+          <span class="p-float-label">
+            <textarea
+              pInputText
+              id="description"
+              type="text"
+              class="inputfield w-full"
+              formControlName="description"
+              autofocus>
+            </textarea>
+            <label for="description">Descripción</label>
+          </span>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton
+      icon="pi pi-check"
+      label="Guardar"
+      class="p-button-text"
+      (click)="saveGame()"
+      [disabled]="game_form.invalid"
+    ></button>
+  </ng-template>
+</p-dialog>

@@ -13,6 +13,8 @@ import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
 import { DialogModule } from 'primeng/dialog';
+import { FieldsetModule } from 'primeng/fieldset';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
     declarations: [],
@@ -28,7 +30,9 @@ import { DialogModule } from 'primeng/dialog';
       TableModule,
       PaginatorModule,
       ToastModule,
-      DialogModule],
+      DialogModule,
+      FieldsetModule,
+      CheckboxModule],
     exports: [
       ToolbarModule,
       ButtonModule,
@@ -41,7 +45,9 @@ import { DialogModule } from 'primeng/dialog';
       TableModule,
       PaginatorModule,
       ToastModule,
-      DialogModule],
+      DialogModule,
+      FieldsetModule,
+      CheckboxModule],
     providers: []
 })
 export class PrimengModule { }
